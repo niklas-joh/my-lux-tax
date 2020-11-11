@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+alabaster = "==0.7.12"
+anaconda-client = "==1.7.2"
+anaconda-navigator = "==1.9.12"
+anaconda-project = "==0.8.3"
+applaunchservices = "==0.2.1"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
