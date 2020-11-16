@@ -2,3 +2,4 @@ venv/*
 __*
 *.pyc
 .bash_profile
+.*

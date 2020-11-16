@@ -1,9 +1,9 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
-    return 'Hello, World'
+def home():
+    return render_template("home.html")
 
 @app.route('/user/<user_name>')
 def user_name(user_name): 
