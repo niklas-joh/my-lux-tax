@@ -7,21 +7,30 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>About Us</title>
+        <title>Flask Parent Template</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        {% extends template.html %}
-        {% block content %
-        <h1>About Flask</h1>
-        <p>Flask is a top Python web framework</p>
-        <p>Top web apps using the Flask framework</p>
-        {% endblock %}
+        <header>
+            <div class="container">
+                <h1 class="logo">Simple Flask Website</h1>
+                <strong>
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('about') }}">About</a></li>
+                        </ul>
+                    </nav>
+                </strong>
+            </div>
+        </header>
+        {% block content %}
+        {% endblock content %}
         <script src="" async defer></script>
     </body>
 </html>
