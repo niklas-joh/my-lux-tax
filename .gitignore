@@ -1,5 +1,13 @@
+# Excludes virtual environments
 venv/*
 __*
 *.pyc
+
+# Bash_profile should not be here, but in case, do not upload
 .bash_profile
+
+# Do not upload hidden files (hidden for a reason)
 .*
+
+# Hide secret config from upload to Github (e.g. Secret Keys)
+config.json
