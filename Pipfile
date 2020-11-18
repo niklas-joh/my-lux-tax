@@ -11,6 +11,7 @@ anaconda-project = "==0.8.3"
 applaunchservices = "==0.2.1"
 
 [dev-packages]
+pylint = "*"
 
 [requires]
 python_version = "3.9"
