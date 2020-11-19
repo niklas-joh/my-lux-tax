@@ -18,9 +18,11 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        return 'Form Successfully Submitted!'
     return render_template('formlogin.html', title='Sign In', form=form)
 
 if __name__ == '__main__':

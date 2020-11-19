@@ -1,7 +1,7 @@
 {% extends "formbase.html" %}
 {% block content %}
 <h1>Sign In</h1>
-<form action="" method="POST" novalidate>
+<form action="" method="POST">
     {{ form.hidden_tag() }}
     <p>
         {{ form.username.label }} <br>
@@ -12,7 +12,7 @@
         {{ form.password(size=32) }}
     </p>
     <p>
-        {{ form.remember_me() }} {{ form.remember_me.label }}
+        {{ form.remember_me() }}{{ form.remember_me.label }}
     </p>
     <p>
         {{ form.submit() }}
