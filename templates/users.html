@@ -3,34 +3,30 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Flask Parent Template</title>
-        <meta name="description" content="">
+        <title>Simple Flask Website</title>
+        <meta name="description" content="A simple website following tutorial on building a website with flask">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="">
     </head>
     <body>
+        {% extends "template.html" %}        
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>
-            <div class="container">
-                <h1 class="logo">Simple Flask Website</h1>
-                <strong>
-                    <nav>
-                        <ul class="menu">
-                            <li><a href="{{ url_for('home') }}">Home</a></li>
-                            <li><a href="{{ url_for('about') }}">About</a></li>
-                        </ul>
-                    </nav>
-                </strong>
-            </div>
-        </header>
         {% block content %}
-        {% endblock content %}
+            <form action="/result" method="POST">
+                <p>Name<input type="text" name="Name"></p>
+                <p>Age<input type="text" name="Age"></p>
+                <p>Gender<input type="text" name="Gender"></p>
+                <p><input type="submit" value="submit"></p>
+            </form>
+
+        {% endblock %}
+        
         <script src="" async defer></script>
     </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
@@ -17,6 +17,25 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
+
+@app.route('/')
+def home():
+    return render_template("index.html")
+
+@app.route('/about')
+def about():
+   return render_template('about.html')
+
+@app.route('/users')
+def users():
+    return render_template('users.html')
+
+@app.route('/result', methods = ['POST', 'GET'])
+def result():
+    if request.method == 'POST':
+        result = request.form
+
+    return render_template('result.html', result = result)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
